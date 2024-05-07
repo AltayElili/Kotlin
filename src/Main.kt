@@ -1,4 +1,4 @@
 fun main() {
-    println("Hello")
+    println("Burada her hansi mesele ede bilersen")
 
 }
