@@ -1,11 +1,7 @@
-import kotlin.contracts.contract
-
 fun main() {
     println("-------------Lesson8_Altay-------------")
-    task4()
+    task5()
 }
-
-
 //100-1000 araliginda butun reqemleri tekrar olan ededlerin ededi ortasini tapin.Numune:111,222 111+222/2 2 burda
 // el ile yazilmasin bu 4,5,6 reqemler ucunde odensin
 fun task1() {
@@ -23,7 +19,6 @@ fun task1() {
             for (itemIndex2 in itemIndex1 + 1..<text.length) {
                 if (text[itemIndex1] == text[itemIndex2]) {
                     countSameDigits++
-
                 }
             }
         }
@@ -79,7 +74,7 @@ fun task3() {
     var count=0.0
     for (number in initialValue..finalValue) {
         var result=0
-        var text=number.toString()
+        var text = number.toString()
         for(number1 in text.indices){
             result+=text[number1].digitToInt()
         }
@@ -87,9 +82,8 @@ fun task3() {
             sum += text.toInt()
             count++
         }
-
     }
-    println(sum / count)
+    println("The numerical mean of numbers greater than 10:  \"${sum / count}\"")
 }
 
 //100-1000 araliginda ededin tersi cut olan ededlerin cemini tapin. 123=321(false) 442=244(true)
@@ -105,7 +99,55 @@ fun task4() {
             result+=text[numberIndex]
         }
         if(result.toInt()%2==0){
-            println("$result")
+            println("The sum of even numbers with the inverse of a number:$result")
         }
     }
 }
+
+//10 olculu massiv verilmisdir massivde duplikat olan ededlerin cemini tapin.Numune 10 20 10 40 50 20 70 70 70 -5
+// Result:10+20+70=100
+fun task5() {
+
+    print("Enter the size:")
+    val size = readln().toInt()
+    val myArray = Array(size) { // 1 2 1 2 3 4 3 4
+        println("Enter ${it + 1}-nd number:")
+        readln().toInt()
+    }
+    var result = 0
+    for (numberOne in myArray.indices) {
+        var count = 0
+        for (numberTwo in numberOne+1..<myArray.size) {
+            if (myArray[numberOne] == myArray[numberTwo]) {
+                count++
+            }
+        }
+        if(count==1){
+            result+=myArray[numberOne]
+        }
+    }
+}
+
+//10 olculu massiv verilmisdir ikinci en boyuk elementi tapin
+fun task6() {
+    print("Enter the size:")
+    val size = readln().toInt()
+    val numbers = Array(size) { // 10 12 11 10 9 8 13
+        println("Enter ${it + 1}-nd number:")
+        readln().toInt()
+    }
+    var max1 = numbers[0] //13
+    var max2 = numbers[0] // 12
+    for (maxNumber1 in numbers) {
+        if (maxNumber1 > max1) {
+            max1 = maxNumber1
+        }
+    }
+    for(maxNumber2 in numbers){
+        if(maxNumber2 in (max2 + 1)..<max1){
+            max2=maxNumber2
+        }
+    }
+    println("The second largest number:$max2")
+}
+
