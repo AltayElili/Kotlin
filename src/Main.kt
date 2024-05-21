@@ -196,7 +196,26 @@ fun task11() {
     }
     println(numbers.contentToString())
 }
-//100-1000 araliginda butun reqemleri tekrar olan ededlerin ededi ortasini tapin.Numune:111,222 111+222/2 2 burda el ile yazilmasin bu 4,5,6 reqemler ucunde odensin
+//100-1000 araliginda butun reqemleri tekrar olan ededlerin ededi ortasini tapin.Numune:111,222 111+222/2 2 burda el
+// ile yazilmasin bu 4,5,6 reqemler ucunde odensin
+fun task12() {
+    println("Enter the initial value:")
+    val initalValue= readln().toInt()
+    println("Enter the final value:")
+    val finalValue= readln().toInt()
+    var count=0
+    var sum=0
+    for(number1 in initalValue..finalValue){
+        var text=number1.toString()
+        for(index1 in text.indices){
+            for(index2 in index1+1..<text.length){
+                if(text[index1]==text[index2]){
+                }
+            }
+        }
+        count++
+    }
+}
 //100-1000 araliginda butun sade ve murekkeb ededlerin sayini tapan proqram yazin.Her ikisinin sayini
 //100-1000 araliginda reqemlerinin cemi 10-dan boyuk olan ededlerin ededi ortasini tapin.Numune 945=17(true) 123=6(false)
 //100-1000 araliginda ededin tersi cut olan ededlerin cemini tapin. 123=321(false) 442=244(true)
