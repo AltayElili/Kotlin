@@ -130,3 +130,8 @@ fun task5(){
     }
     println("The square of this number is greater than 600:\"$num1\"")
 }
+
+fun task6() {
+    println("Enter the size:")
+   var
+}
