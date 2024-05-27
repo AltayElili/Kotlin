@@ -4,7 +4,7 @@ import java.sql.Array as Array1
 
 fun  main() {
     var text="Salam usaqlar. Bu gun 11-ci dersin tapsirigini yoxlayaciq."
-    println(padStart(text, size = 5, item = "a"))
+    println(padStart(text, size = 5, item = 'a'))
 }
 //
 
@@ -34,11 +34,11 @@ fun stringDrop(text: String,drop:Int):String{
 
 // Salam usaqlar.
 // 00000 Salam usaqlar.
-//fun padStart(text: String, size: Int, item: Char):String{
+fun padStart(text: String, size: Int, item: Char):String{
 //
 //    var result=""
 //    for(index1 in 0..text.indices-1){
 //        result+=text[index1]
 //    }
 //    return result
-//}
+}
