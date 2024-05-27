@@ -1,7 +1,3 @@
-import java.awt.MenuItem
-import kotlin.math.sign
-import java.sql.Array as Array1
-
 fun  main() {
     var text="Salam usaqlar. Bu gun 11-ci dersin tapsirigini yoxlayaciq."
     println(padStart(text, size = 5, item = 'a'))
