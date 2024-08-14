@@ -53,15 +53,10 @@ fun <T> myFirstOrNull(myList4: MutableList<T>):T?{
 
 //maxByOrNull
 fun <T,K> myMaxByOrNull(myList5: MutableList<T>, condition: (T) -> K):T?{
-    if(myList5.isEmpty()) return null
-    var maxElement=myList5[0]
-    var maxValue=condition(maxElement)
-    for(element in myList5){
-        val value = condition(element)
-        if(value>maxValue){
-            maxElement=element
-            maxValue=value
+    var maxElement :T? = myList5[0]
+    for(item in myList5){
+        if(condition(item)){
+
         }
     }
-    return maxElement
 }
