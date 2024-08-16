@@ -1,5 +1,5 @@
 fun main() {
-
+task1()
 //      val myList = mutableListOf(
 //        Person("Altay", 24, 177),
 //        Person("Vusal", 25, 172),
@@ -20,9 +20,9 @@ fun main() {
 // birinci herfini boyuk edib alinan neticeni ekrana cixardin
 fun task1() {
     var myText: String? = "bugun ayin 16-dir"
-    myText = myText?.run {
-        this.trim()
-        this[0].uppercase() + myText?.substring(1)
+    myText = myText?.let {
+        it.trim()
+        it[0].uppercase() + myText?.substring(1)
     }
     println(myText)
 }
