@@ -1,11 +1,11 @@
 fun main() {
     
     try {
-//        val myText="Bpgpn myyn drr"
-//        println(checkVowels(myText))
+        val myText="Bpgpn myyn drra"
+        println(checkVowels(myText))
 
-        val myList4= mutableListOf(1,3,6,4,12,7)
-        println(checkDublicates(myList4))
+//        val myList4= mutableListOf(1,3,6,4,12,7)
+//        println(checkDublicates(myList4))
     }catch (error:NoVowelsException){
         println(error.message)
     }catch (error:DublicateNumberException){
@@ -32,7 +32,7 @@ fun divideNumbers(dividend:Int, divisor:Int){
 //xeta verer messageni ekrana cixardir.
 fun checkEvenNumber(item1:Int){
     if(item1%2!=0){
-        throw IllegalArgumentException("Eded tek ededdir")
+        throw IllegalArgumentException("The number is an odd number")
     }
 }
 
@@ -52,19 +52,19 @@ fun tryNumber(item2:Int){
 fun checkVowels( text:String){
     val myList= mutableListOf("a", "e" , "ə", "i","ı", "o", "ö", "u", "ü", "A", "I", "Ə", "İ", "Ö", "Ü", "U", "E", "O")
     var control=false
-    for(item1 in myList) {
+    inner@for(item1 in myList) {
         for (item2 in text) {
             if(item1==item2.toString()){
                 control=true
-                break
+                break@inner
             }
         }
     }
     if(control){
-        println("metnde sait var")
+        println("There is a vowel in the text")
     }
     else{
-        throw NoVowelsException("Metnde sait yoxdur")
+        throw NoVowelsException("There is not a vowel in the text")
     }
 }
 
@@ -75,10 +75,10 @@ class NoVowelsException(message: String):Exception(message)
 //funksiya cagirilan yerde xetani tutur eger xeta varsa mesaji ekrana cixardir.Xeta yoxdu duplikat element yoxdur messaji
 //ekrana cixir.
 fun checkDublicates(myList:MutableList<Int>):String{
-    val string="Dublikate element yoxdur"
+    val string="There are no duplicate items"
     for (index1 in myList.indices) {
         for (index2 in index1+1..<myList.size) {
-          if(myList[index1]==myList[index2]) throw DublicateNumberException("Bu siyahida dublicate element var")
+          if(myList[index1]==myList[index2]) throw DublicateNumberException("This list contains duplicate items")
         }
     }
     return string
