@@ -50,7 +50,7 @@ fun tryNumber(item2:Int){
 //yaratmalisiz. NoVowelsException classini yaradirsiz bu tipde xetani atirsiz. checkVowels funksiyasi cagirilan yerde eger
 //hec bir xeta vermezse bu metnde sait var eger xeta bas vererse geri donderdiyiniz xeta mesajini ekrana cixartmaq.
 fun checkVowels( text:String){
-    val myList= mutableListOf("a", "e" , "i", "o", "u", "A", "U", "E", "I", "O")
+    val myList= mutableListOf("a", "e" , "ə", "i","ı", "o", "ö", "u", "ü", "A", "I", "Ə", "İ", "Ö", "Ü", "U", "E", "O")
     var control=false
     for(item1 in myList) {
         for (item2 in text) {
